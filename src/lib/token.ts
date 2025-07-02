@@ -124,8 +124,6 @@ export const getTokenData = async (tokenAddress: Address) => {
 
     const risks = analysisContract(verified, abi)
 
-    console.log({ totalSupply, owner, name, symbol, decimals, verified, risks, deployer: creatorRes.data.result[0].contractCreator || null })
-
     return { totalSupply, owner, name, symbol, decimals, verified, risks, deployer: creatorRes.data.result[0].contractCreator || null }
 
 }

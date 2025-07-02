@@ -5,8 +5,20 @@ import { getTokenData, tokenData } from '@/lib/token'
 import React from 'react'
 import { Address } from 'viem'
 
-const page = async ({ params }: { params: { address: Address } }) => {
-    let tokenData: tokenData
+const page = async ({ params }: { params: Promise<{ address: Address }> }) => {
+    let tokenData: tokenData = {
+        contractAddress: "0x",
+        decimals: 0,
+        deployer: "0x",
+        image: "",
+        name: "",
+        owner: "0x",
+        risks: [],
+        riskScore: 0,
+        sourceVerified: false,
+        symbol: "",
+        totalSupply: BigInt(0)
+    }
     let error;
     try {
         const { address } = await params
