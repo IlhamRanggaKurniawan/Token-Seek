@@ -39,7 +39,8 @@ const page = async ({ params }: { params: Promise<{ address: Address }> }) => {
             totalSupply: totalSupply,
             risks: risks
         }
-    } catch {
+    } catch(_error) {
+        console.log(_error)
         error = "Token Address Invalid Or Smart Contract Not found"
     }
 
